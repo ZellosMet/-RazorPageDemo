@@ -1,0 +1,21 @@
+﻿@page
+@model RazorPageDemo.Pages.EmployeeModel
+@{
+	ViewData["Title"] = "GetEmployee Page";
+}
+
+<div>
+	<table>
+		<tr>
+			@for (int i = 0; i < Model.EmployeeList.Count; i++)
+			{
+				<td>
+					@*<label>Name: @Model.EmployeeList.FirstOrDefault(x => x.Id == Model.Id)?.FirstName </label>*@
+					<label>First Name: @Model.EmployeeList[i].FirstName </label>
+					<label>Last Name: @Model.EmployeeList[i].LastName </label>
+					<label>Data of Birth: @Model.EmployeeList[i].DateOfBirth.ToShortDateString() </label>
+				</td>
+			}
+		</tr>
+	</table>
+</div>
